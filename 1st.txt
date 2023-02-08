@@ -1,0 +1,12 @@
+<html>
+<head>
+hello html
+</head>
+<body>
+<img src="C:\Users\laksh\OneDrive\Pictures\Screenshots\j.png" usemap="mymap"></img>
+
+<map name="mymap">
+<area shape="polygon" coords="19,44,45,37,35,38,28,48" herf="
+</map>
+</body>.
+</html>

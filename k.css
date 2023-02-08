@@ -1,0 +1,12 @@
+*{
+    bg color:"red"
+    margin:0;
+    padding:0;
+}
+.main{
+    width:100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to right, #9c27b0,#8ecdff);
+    overflow:hidden;
+}

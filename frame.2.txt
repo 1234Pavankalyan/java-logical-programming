@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>
+hello html
+</title>
+</head>
+<body>
+<frameset cols="30%,70%">
+<fram src="D:\html\frames 1.html">
+<fram src="D:\html\2nd.html">
+</frameset>
+</noframes></noframes>
+</body>
+</html>.

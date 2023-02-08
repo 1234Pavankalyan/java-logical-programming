@@ -1,0 +1,22 @@
+D:\html<html>
+<head>
+<title>
+hello html
+</title>
+</head>
+<body>
+<img src="C:\Users\laksh\OneDrive\Pictures\Screenshots\j.png" usemap="mymap" alt="my map" width="50" depth="100"></img>
+<form action="D:\html\2nd.txt" method="post">
+<frameset legend="hello">
+first name:
+<input placeholder="1st name" name="first namme">
+second name:
+<input type="text" name="2nd name">
+
+<input type="submit" value="SUBMIT">
+
+
+</frameset>
+</form>
+</body>.
+</html>

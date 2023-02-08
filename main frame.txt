@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>frames</title>
+    </head>
+    <frameset cols="50%,50%">
+    <frame src="D:\html\frame 1.1">
+    <frame src="D:\html\frame 2.1">
+    </no frames></no frames>
+    </frameset>
+</html>
