@@ -2,6 +2,8 @@ import java.util.*;
 class studentData{
   int s_no,s1,s2,s3;
   String s_name;
+  int tot;
+  float avg;
   void Data(){
     Scanner sc=new Scanner(System.in);
     
@@ -13,18 +15,18 @@ class studentData{
     s1=sc.nextInt();
     s2=sc.nextInt();
     s3=sc.nextInt();
-}
-}
-class AverageAndTotal extends studentData{
-  int tot;
-  float avg;
+  }
   void Marks(){
      tot=(s1+s2+s3);
     avg=((float)tot/3);
   }
+
 }
-class report extends AverageAndTotal{
-  void grade(){
+interface report{
+  public void grade();
+}
+class grading  extends studentData implements report{
+  public void grade(){
   System.out.println(" STUDENT DETAILS ");
     System.out.println(" ----------------");
     System.out.println("The Student Number is : " + s_no);
@@ -53,12 +55,12 @@ class report extends AverageAndTotal{
 }
 
 
-class Multilevel{
+class StudentInterface{
   public static void main(String args[]){
-    report s1=new report();
-    s1.Data();
-    s1.Marks();
-    s1.grade();
+    grading g1=new grading();
+    g1.Data();
+    g1.Marks();
+    g1.grade();
+    
   }
 }
-===
