@@ -1,0 +1,18 @@
+1) Write an Algorithm and draw a flow chart to find factorial of the given number(Method2)?
+                                  n=5  ==>  5X4X3X2X1 = 120
+ 
+2) Write an Algorithm and draw a flow chart to check the given number is palindrome number or not?
+                                    n=121  ----> Palindrome Number                                                     
+                                    n=123  -----> Not Palidrome Number
+ 
+3) Write an Algorithm and draw a flow chart to check the given number is Armstrong number or not?
+                                  n=153
+                                       3X3X3= 27
+                                       5X5X5=125
+                                       1X1X1=1
+                                                    ---
+                                                    153  
+4) Write an Algorithm and draw a flow chart to print the reverse of the given number ?
+                                         n=1234 -------> 4321
+5) Write an Algorithm and draw a flow chart to fint the sum of digits?
+                                        n=123 --------> 6
