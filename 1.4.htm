@@ -1,0 +1,118 @@
+
+<!--Exercise 1: In this HTML page, do the following exercises. Click Preview link after completion of each excercise to see your output. 
+After completion of each excercise use br tag for line space. After completing all questions, submit the assignment to gitHub. -->
+
+
+
+<!--Exercise 1.1:  Write a sentence and display text in red colour with inline style for the body element  -->
+<html>
+    <body style="color:red;">
+        <p>My name is pavankalyan I love Animations</p>
+
+    </body>
+</html>
+
+<!--Exercise 1.2:  Write another sentence and use red coloured text in the paragraph using Internal style. -->
+<html>
+    <head>
+        <style>
+            p{
+               color:red;
+            }
+        </style>
+        <body>
+            <p>My another name is aryan kumar</p>
+        </body>
+    </head>
+</html>
+<!--Exercise 1.3:  Create a heading and a paragraph under it. Display text of heading and paragraph tags in different color and font size using external CSS  -->  
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="external2.css">
+    </head>
+   
+    <body>
+        <h2 >India</h2>
+        <p>Uppalapati Venkata Suryanarayana Prabhas Raju (born 23 October 1979), known mononymously as Prabhas ([pɾabʱaːs]), is an Indian actor who works predominantly in Telugu cinema. One of the highest-paid actors in Indian cinema, Prabhas has featured in Forbes India's Celebrity 100 list three times since 2015</p>
+    </body>
+</html> 
+
+<!-- Exercise 1.4: Display "My Cities" as a main heading and apply css using id attribute such as changing background color, font color and font family. Display city names as a side headdings and display paragraph about city under each city name. 
+apply css for paragraph's using class attribute such as line height, font color, font-family and font size etc. -->
+<html>
+    <head>
+        <style>
+            #h1{
+             background-color: antiquewhite;
+             color:goldenrod;
+             font-family:'Courier New', Courier, monospace;
+             text-align: center;
+
+            }
+            .p{
+                line-height: 30px;
+                color:blue;
+                font-family:'Courier New', Courier, monospace;
+                font-size: 20px; 
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h1 id="h1" >My cities</h1>
+        <h2>vijayawada</h2>
+        <p class="p" >Vijayawada, formerly known as Bezawada, is the second largest city in the Indian state of Andhra Pradesh and is a part of the state's Capital Region</p>
+        <h2>amaravathi</h2>
+        <p class="p">Amaravati is the capital of the Indian state of Andhra Pradesh. It is located on the banks of the river Krishna in Guntur district. Dharanikota, the ancient city site nearby, was founded more than 2,200 years ago, serving as an ancient capital.</p>
+    </body>
+</html>
+<!--Exercise 1.5: Create an ordered list and change the background colour to yellow for the selected list items using descendent selectors. -->
+<html>
+   <head>
+    <style>
+        ol li{
+          background-color:yellow; 
+        }
+    </style>
+   </head>
+<body>
+    <ol type="I">
+        <li>bus</li>
+        <br>
+        <li>car</li>
+        <br>
+        <li>train</li>
+        <br>
+        <li>tractor</li>
+        <br>
+        <li>aero-plane</li>
+        <br>
+    </ol>
+</body>
+    </html>
+<!--Exercise 1.6: Create 3 links and using pseudo selector, change the colours of the link when it is active, visited, hover. -->
+
+ <html>
+        <head>
+            <style>
+                a:visited{
+                    color:blue;
+                }
+                a:hover{
+                    color:orange;
+                }
+                a:active{
+                    color:green;
+                }
+            </style>
+        </head>
+        <body>
+            <a href="https://www.youtube.com/" target="_blank">youtube</a><br>
+            <a href="https://en.wikipedia.org/wiki/Prabhas" target="_blank">DARLING-prabhas</a><br>
+            <a href="https://chat.openai.com/chat" target="_blank">chatgpt</a><br>
+        </body>
+    </html>
+
+
+
+ 

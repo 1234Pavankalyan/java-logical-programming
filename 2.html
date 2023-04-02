@@ -1,0 +1,66 @@
+<!--Exercise 2.1: Using pseudo element selector, create a paragraph and display only the first line of para with blue coloured text with a capital letters of small size.-->
+<html>
+    <head>
+        <style>
+        p::first-line{
+         color:blue;
+          text-transform: uppercase;
+          font-size: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <p>
+            Using pseudo element selector, create a paragraph and display only the first line of para with 
+            blue coloured text with a capital letters of small size.  Using pseudo element selector, create a paragraph and display only the first line of para with 
+            blue coloured text with a capital letters of small size.  Using pseudo element selector, create a paragraph and display only the first line of para with 
+            blue coloured text with a capital letters of small size. Using pseudo element selector, create a paragraph and display only the first line of para with 
+            blue coloured text with a capital letters of small size
+        </p>
+    </body>
+</html>
+<!-- Exercise 2.2: Using general sibling selector, create an Unordered list, change the colour of the items to green and display them in bold text. --> 
+<html>
+    <head>
+        <style>
+            ul~li{
+                color: green;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <ul type="circle">
+            <li>car</li>
+            <li>bike</li>
+            <li>aeroplane</li>
+            <li>sprts</li>
+        </ul>
+        <li>B</li>
+        <li>A</li>
+        <li>D</li>
+        <li>B</li>
+        <li>O</li>
+        <li>Y</li>
+    </body>
+</html>
+<!-- Exercise 2.3: Using adjacent sibling selector, display list items in an ordered list and change the background colour to yellow for the element which is an adjacent sibling for the selected element. -->
+ <html>
+    <head>
+        <style>
+            ol+li{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <ol type="A">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </body>
+ </html>
