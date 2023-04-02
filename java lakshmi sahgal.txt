@@ -26,7 +26,8 @@ class age {
   }
 }
 
-==============================================================================================================================================
+  =======================================================================================================================================================
+
 //Q. Write a Java Program to Enter Student Number, Student Name, Any 3 Subject of Marks, Calculate Total and Average of the Student, and print the report?
 import java.util.Scanner;
 class average{
@@ -84,7 +85,7 @@ class account{
        System.out.println("enter withdraw amount");
      double wamount=sc.nextDouble();
     double n2amount=caccount-wamount;
-    System.out.println("the deposit amount" +n2amount);  
+    System.out.println("the withdraw amount" +n2amount);  
     }
   void deposit(){
     System.out.println("enter deposit amount");
@@ -199,6 +200,7 @@ class big
       }
     }
   }
+====================================================================================================================================================
 
 //Q. Write a Program to Enter Product Number, Product Name, Product Cost, Product Quantity, calculate Bill Amout and print the report?
 import java.util.Scanner;
@@ -224,7 +226,7 @@ class bill{
     System.out.println("the pcost" +pcost);
   }
 }
-
+===========================================================================================================================================================
 import java.util.Scanner;
 class calculator{
   public static void main(String args[]){
@@ -263,7 +265,7 @@ class calculator{
   }
 }
 
-
+===========================================================================================================================================================
 
 
 
@@ -319,7 +321,7 @@ class calculator1{
   }
 }
 
-
+===========================================================================================================================================================
 import java.util.Scanner;
 class char1{
   public static void main(String args[]){
@@ -329,7 +331,6 @@ class char1{
     ch=sc.next().charAt(3);
     System.out.println("the value of character is " +ch);
   }
-  
 }
 
 
@@ -603,7 +604,7 @@ class even3
       }
     }
   }
-
+=======================================================================================================================================================
 import java.util.Scanner;
 class float2{
   public static void main(String args[]){
@@ -697,7 +698,7 @@ class great {
     }
   }
 }
-
+===========================================================================================================================================================
 import java.util.Scanner;
 class if1
   {
@@ -715,7 +716,7 @@ class if1
     }
   }
 
-
+===========================================================================================================================================================
 import java.util.Scanner;
 class leap
   {
@@ -735,7 +736,7 @@ class leap
     }
   }
 
-
+===========================================================================================================================================================
 // This program takes the day of the week and the current time as input and uses nested if statements to check if the library is open. If the day is not Saturday or Sunday and the current time is between 9:00 AM and 8:00 PM, it will print "The library is open." Otherwise, it will print "The library is closed."
 // inputs:
 //         ----> day: Monday
@@ -749,6 +750,7 @@ class leap
  
 // output:
 //            Library is Closed
+
 import java.util.Scanner;
 class library{
   public static void main(String args[]){
@@ -1671,10 +1673,6 @@ public static void main(String args[]){
        System.out.println("the charge of cost units "  +cost);
      }
    }
-
-
-
-
 
 class current1{
 public static void main(String args[]){
@@ -13860,6 +13858,103 @@ date OF YEAR ....259
 WEEK OF MONTH ....3
 WEEK OF YEAR ....38
 =====================================================================
+import java.util.Scanner;
+
+public class MultiplyString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int multiplier = scanner.nextInt();
+      System.out.print("Enter a string");
+         String input = sc.nextLine();
+        for (int i = 0; i < input.length(); i++) {
+            int digit = Character.getNumericValue(input.charAt(i));
+            int result = 1;
+            for (int j = 0; j < multiplier; j++) {
+                result *= digit;
+            }
+            System.out.print(result + " ");
+        }
+    }
+}
+is used to extract a numeric value from a character in a string.
+
+Here's how it works:
+
+input is a string variable that contains some characters.
+charAt(i) returns the character at the i-th position of the string. For example, if input is "123", input.charAt(0) returns '1', input.charAt(1) returns '2', and so on.
+Character.getNumericValue is a method in the Character class that returns the numeric value of a character. For example, Character.getNumericValue('0') returns 0, Character.getNumericValue('1') returns 1, and so on.
+The digit variable is an integer that is assigned the numeric value of the character at the i-th position of the string.
+So, int digit = Character.getNumericValue(input.charAt(i)); extracts the numeric value of a character in a string at a given position, and assigns it to an integer variable called digit.
+
+
+
+
+
+
+=====================================================================
+import java.util.Scanner;
+
+public class ram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string of integers: ");
+        String input = scanner.nextLine();
+        System.out.print("Enter a multiplier: ");
+        int multiplier = scanner.nextInt();
+        scanner.close();
+
+        
+        for (int i = 0; i < input.length(); i++) {
+            int digit = input.charAt(i)-'0' ;
+            int result = 1;
+            for (int j = 0; j < multiplier; j++) {
+                result *= digit;
+             
+            }
+           System.out.println(result); 
+         
+        }
+        
+    }
+}
+In this version, we use input.charAt(i) - '0' to convert each character to its integer value. This works because the ASCII value of '0' is 48, and the ASCII values of the digits '1' to '9' are 49 to 57. So when we subtract the ASCII value of '0' from the ASCII value of the character, we get the corresponding integer value.
+
+This program works the same way as the previous ones, but uses a simpler method to convert the characters to integers.
+=====================================================================
+import java.util.Scanner;
+
+public class MultiplyString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string of integers: ");
+        String input = scanner.nextLine();
+        System.out.print("Enter a multiplier: ");
+        int multiplier = scanner.nextInt();
+        scanner.close();
+
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            int digit = Integer.parseInt(String.valueOf(input.charAt(i)));
+            int result = 1;
+            for (int j = 0; j < multiplier; j++) {
+                result *= digit;
+            }
+            output.append(result).append(" ");
+        }
+        System.out.println(output.toString().trim());
+    }
+}
+
+In this version, we use String.valueOf() to convert the character to a string, and then Integer.parseInt() to convert the string to an integer.
+
+This program works the same way as the previous one, but uses a different method to convert the characters to integers.
+
+
+
+
+
+===================================================================
 //take array list at run time
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15628,6 +15723,1728 @@ public class App
 
 
 ==================================================================================================================================================
+[2:38 PM] Karunakar Eeede
+<!--  HTML COMMENT LINE  -->
+<!DOCTYPE html>
+       <head>
+              <title>Welcome to My Webite</title>
+      </head>
+      <body>            <b>WELCOME TO FIRST HTML PROGRAM</b>  <br>
+           <strong>WELCOME TO FIRST HTML PROGRAM</strong>
+               <br><br>
+                  <i>WELCOME TO FIRST HTML PROGRAM</i> <br>
+                  <em>WELCOME TO FIRST HTML PROGRAM</em> 
+               <br><br>
+                  <u>WELCOME TO FIRST HTML PROGRAM</u> 
+               <br><br>
+                 <b><i><u>WELCOME TO FIRST HTML PROGRAM</u></i></b>
+               <br><br>
+                          SUBSCRIPT:  H<sub>2</sub>SO<sub>4</sub>     
+                <br><br>
+                            SUPERSCRIPT: 1<sup>st</sup>
+                <br><br>
+                            Rs. <strike>250/-</strike>  100/- only
+                  <br>
+                           <s>Welcome</s>
+                    <br>
+                          <del>Welcome</del>
+                   <br><br>
+          <blockquote>
+                    Explanation: The inner join is a form of join in <mark>MySQL</mark> that is used to combine the result of concatenating the contents of two tables into a new table. In inner join,<q> result is produced by matching rows</q> in one table with rows in another table.
+            </blockquote>
+               <br><br>
+             <big><big>
+               Explanation: The inner join is a form of join
+             </big></big>
+            <br><br>
+   <small>
+   Explanation: The inner join is a form of join
+   </small>
+     </body>
+</html> 
+
+========================================================================================================================
+
+
+<!--  HTML COMMENT LINE  -->
+<!DOCTYPE html>
+<head>
+<title>
+Welcome to My Webite
+</title></head>
+<body bgcolor="green"><font color="white" size="7" face="Viner Hand ITC">
+
+   Explanation: The inner join is a form of join in MySQL that is used to combine the result of concatenating the contents of two tables into a new table. In inner join,<q> result is produced by matching rows</q> in one table with rows in another table.
+</font>    
+</small>
+</body>
+</html>
+=====================================================================================================
+<!--  HTML COMMENT LINE  -->
+<!DOCTYPE html>
+<head>
+<title>
+Welcome to My Webite
+</title></head>
+<body colour="black">
+    <font colour="white" size="7" face="Viner Hand ITC">
+
+Explanation: The inner join is a form of join in MySQL that is used to combine the result of concatenating the contents of two tables into a new table. In inner join,<q> result is produced by matching rows</q> in one table with rows in another table.
+</font>
+
+</body>
+</html>
+=======================================================================================================================
+
+<!--HTML COmmentline -->
+<!DOCTYPE HTML>
+<head>
+<tittle>
+WELCOME TO BITLABS
+</tittle>
+</head>
+<body>
+<img src="aryan.jpg" width="600" heigth="500" border="6" title="deepawali">
+</boby>
+</html>
+
+
+
+
+=======================================================================================================================================
+
+
+
+<!--  HTML COMMENT LINE  -->
+<!DOCTYPE html>
+<head>
+<title>
+Welcome to My Webite
+</title>
+</head>
+<body>
+<p align="center">
+   Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.   
+ </p>
+<p align="right">
+   Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.  
+ </p>
+<p align="justify">
+   Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.   
+</p>
+</body>
+</html>
+==================================================================================================================== 
+
+
+<!DOCTYPE html>
+<head>
+    <h1 align="right">aryan</h1>
+    <h2 align="center">aryan</h2>
+    <h3 align="left">aryan</h3>
+    <h4>aryan</h4>
+    <h5>aryan</h5>
+    <h6>aryan</h6>
+    <body>
+        <br>
+        <i>pavan</i>
+        <br>
+        <em>kalyan</em>
+        <br>
+        <u>turbo</u>
+        <br>
+        <b><i><u><big>aryan is a good boy</big></u></i></b>
+        <br>
+        <sup>aryankumarhww</sup>
+        <br>
+        <br>
+        h<sub>20</sub>
+        <br>
+        1<sup>st</sup>
+        <br>
+        <strike>welcome</strike>
+        <br>
+        <del>bitlabs</del>
+        <br>
+      <mark>
+      <big> pavan and aryan are same</big> 
+    </mark>
+    <br>
+    <q><big>hello world</big></q> 
+    <br>
+    <q><small>hello world</small></q>
+    <br>
+    <blockquote> backspace</blockquote>  
+      <p  align="right">
+        Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each. 
+      </p> 
+      <p align="center">
+        Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each. 
+      </p>
+      <p align="left">
+        Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each. 
+      </p>
+      <p align="justify">
+        Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.   
+      </p>
+      <ul type="disc">
+ <li>krishna</li>
+ <li>guntur</li>
+ <li>malasia</li>
+      </ul>
+      <ul type="square">
+        <li>krishna</li>
+        <li>guntur</li>
+        <li>malasia</li>
+             </ul>
+             <ul type="circle">
+                <li>krishna</li>
+                <li>guntur</li>
+                <li>malasia</li>
+                     </ul>
+
+                     <ol type="1">
+                        <li>krishna</li>
+                        <li>guntur</li>
+                        <li>malasia</li>
+                             </ol>
+                             <ol type="a">
+                                <li>krishna</li>
+                                <li>guntur</li>
+                                <li>malasia</li>
+                                     </ol>
+                                     <ol type="A">
+                                        <li>krishna</li>
+                                        <li>guntur</li>
+                                        <li>malasia</li>
+                                             </ol>
+                                             <ol type="I">
+                                                <li>krishna</li>
+                                                <li>guntur</li>
+                                                <li>malasia</li>
+                                                     </ol>
+                                                     <ol type="i">
+                                                        <li>krishna</li>
+                                                        <li>guntur</li>
+                                                        <li>malasia</li>
+                                                             </ol>
+<big>                                                            
+<h4>
+  <dl>
+    <dt><big>my sql</big>
+        <dd>
+            Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.Explanation: An SQL join clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as it is. A JOIN is a means for combining fields from two tables by using values common to each.   
+        </dd>
+    </dt>
+</dl>
+</h4>
+</big>
+<small><big>
+    aryankumar
+</big>
+<br>
+<img src="https://cdn1.matadornetwork.com/blogs/1/2018/11/woman-lighting-Diya-during-Diwali-Festival-in-India.jpg" width="600" heigth="500" border="6" title="deepawali">
+<br>
+<a href="https://www.google.co.in/"target="parent">GOOGLE</a>
+<BR>
+    <a href="https://www.google.co.in/"target=" ">GOOGLE</a>
+    <br>
+    <a href="https://www.google.co.in/"target="new">GOOGLE</a>
+<br>
+<a href="mailto:aryankumar48895@gmail.com"target="parent">GOOGLE</a>
+    </body>
+
+</head>
+
+
+
+
+====================================================================================================================== 
+Arogya Hospital Information Management System Hey learner!! Remember our client Arogya Hospital, for whom we built a Java based application? They liked your work, and they are back with another project contract. This time Arogya Hospital needs some nice-looking web pages (front end) for the operators, nurses and doctors to use. Understand the requirements below and use what you learned about HTML and CSS. Please read the description carefully before you start implementation. Based on the success of this project, Arogya will award additional contracts to bitLabs. The management system should have the following features: - • Home page
+Home page should contain Hospital logo, brief description of hospital and their mission with attractive images. 
+Also, we should have Some other options to choose like - 
+1.Medicine Record 
+2.Patient’s Registration 
+3.Patient’s Profile 
+4.Contact us • Medicine Record
+Beside Home page option we should have Medicine Entry Form. This form is used to capture the name of the medicine supplier and all the medicines supplied by them.
+In medicine entry form we should take 3 inputs that represent the “Supplier Details”
+1.Supplier ID 
+2.Supplier Name 
+3.Date and time of Supply • Right below the “Supplier Details” you should have a table, with multiple rows. Each row represents a medicine supplied by the particular Supplier.   
+1.Medicine ID 
+2.Medicine Name 
+3.Unit price 
+4.Quantity 
+5.Manufacture date
+6.Expiry Date
+And the “Submit button” at the bottom middle of the page. ● Patient’s Registration 
+This page is used to register patients into the system and to admit them. Assign a unique id to each patient admitted. Add a patient’s personal details:
+Add a patient’s details to your page whenever there is a new patient admitted.
+The patient details should include his/her name, age, gender, Aadhar Card number, contact number, Emergency contact number, Complete address, etc. Guardian's Information: -
+Add a patient’s guardian’s details to your page whenever there is a new patient    admitted. The details should include his/her name, age, gender, Aadhar Card number, contact number, Complete address, etc. COVID 19: Past 1 year information: 
+In this section we will be collecting their past record related to covid. The details should include Travel info: Did He/she travel in the past 1 Month?, Vaccine Doses, Date of last dose, Date of last Covid test, If patient is showing any symptoms? etc. Insurance details: 
+We should collect their insurance details (if any) like insurance membership, Insurance number, etc. And take “Date of admission” then “Submit Button” at the bottom of the page. ●
+ Search Patients
+This page is used to do the following:
+1.View full list of patients
+2.Search an entry of patient
+3.Recovery and Delete View full list of patients
+The system should show the list of patients at any point of time. Basically, the system should be dynamic and a real time system. In other words, it can provide results at any point of time without any delays. For now, just provide a button to view all patients, and we can hook it to up to the backend in a later project. Search an entry of patient
+The operator must be able to search for patients using any of the following information Patient ID, Patient Name, Patient City, Patient Age. For a searching by age, provide minimum age and maximum age as search input. Recovery and Delete
+Mark the patient recovered when he or she is fully recovered using patient’s ID as input. The system should also be able to delete the information of a patient when asked to, using patient’s ID as input. 
+• Contact us
+In this page we should include all contact details of hospitals like Address, Phone No,    Email address, Mobile No., Customer Support, Ambulance Contact No., Website, etc. If you want to add some extra features in your project then you can discuss it with your respective mentor. Your innovative ideas are very welcome. Sounds exciting? Then please go ahead and start your implement using HTML and CSS learnt in the Front-End foundation course. Note: Create menu bar which includes Home, Medicine Record, Patient Registration, Patient Profile and contact us as a menu values. When we click on the menu option display related elements on the body part of the HTML page. Create footer and display “© All Rights Reserved by Arogya Hospital @bitLabs.in” message. All the very best and Happy learning with bitLabs!!
+
+====================================================================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        welcome to bitlabs
+    </head>
+    <body bgcolor="pink">
+        <table border="5" align="center" bgcolor="cyan" width="300" heigth="250" cellpadding="50" cellspacing="10">
+            <caption>companyinformation</caption>
+                <tr>
+                    <th>company</th>
+                    <th>name</th>
+                    <th>phoneno</th>
+                </tr>
+                <tr>
+                    <td>symphonise</td>
+                    <td>pavan</td>
+                    <td>65988</td>
+                </tr>
+                <tr>
+                    <td>bitlabs</td>
+                    <td>kumar</td>
+                    <td>69088</td>
+                </tr>
+                <tr>
+                    <td>tekworks</td>
+                    <td>aryan</td>
+                    <td>68494</td>
+                </tr>
+                
+            
+        </table>
+    </body>
+</html>
+=============================================================================================================
+<!DOCTYPE html>
+<html>
+  <head>welcome to my website</head>
+  <body>
+    <div align="center" >pavan</div>
+    <div align="left" >pavan</div>
+    <div align="right" >pavan</div>
+    <hr >
+    <hr colour="red">
+    <hr color="red"width="400px"size="25">
+    <hr color="#FFOOFF"width="400px"size="25">
+    <hr color="#FFOOFF"width="400px"size="25" align="left">
+<marquee bgcolor="cyan" >welcome to bitlabs</marquee>
+<marquee bgcolor="orange" direction="right">welcome to bitlabs</marquee>
+<marquee bgcolor="pink" behavior="alternate">welcome to bitlabs</marquee>
+<marquee bgcolor="skyblue" direction="right" scrollamount="50" hspace="50" vspace="50">welcome to bitlabs</marquee>
+  </body>
+</html>
+==============================================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        welcome to bitlabs
+    </head>
+    <body >
+        <table background="mash.jpg" border="5" align="center"  width="300" heigth="250" cellpadding="50" cellspacing="10">
+            <caption>companyinformation</caption>
+                <tr>
+                    <th >company</th>
+                    <th>name</th>
+                    <th>phoneno</th>
+                </tr>
+                <tr>
+                    <td>symphonise</td>
+                    <td>pavan</td>
+                    <td>65988</td>
+                </tr>
+                <tr>
+                    <td>bitlabs</td>
+                    <td>kumar</td>
+                    <td>69088</td>
+                </tr>
+                <tr>
+                    <td>tekworks</td>
+                    <td>aryan</td>
+                    <td>68494</td>
+                </tr>
+                
+            
+        </table>
+    </body>
+</html>
+=============================================================================================================================================
+
+Syntax:
+ 
+<form name="name">
+ 
+           // Input fields
+ 
+</form>
+ 
+Text Field:
+-------------
+ 
+  <input type="text" name="name" size=" " value="Default Text" placeholder="text">
+ 
+            required
+            disabled
+=            maxlength
+--==============-----------====================---------------------====================----------------================-------------==================----
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <form name="aryanjob">
+                firstname:<input type="text" name="txt" size="30" disabled>
+                firstname:<input type="text" name="txt" size="30" required>
+                lastname:<input type="text" name="txt" size="30" required>
+                <br>
+                password:<input type="password" name="pwd" value="bitlabs">
+                <br>
+                confirmpassword:<input type="password" name="pwd" placeholder="enter password">
+              
+                <h4>SELECT YOUR GENTER PLEASE</h4>
+                <input type="radio" name="m" value ="male">MALE
+                <input type="radio" name="m" value ="female">FEMALE<br>
+                <h4>enter YOUR qualification PLEASE</h4>
+                <input type="checkbox" name="ch" value ="tenth">tenth<br>
+                <input type="checkbox" name="ch" value ="inter">inter<br>
+                <input type="checkbox" name="ch" value ="b.tech">b.tech<br>
+                <input type="checkbox" name="ch" value ="m.tech">m.tech<br>
+                <input type="checkbox" name="ch" value ="phd">phd<br>
+            </form>
+        </body>
+    </head>
+</html>
+===========================================================================================================================   
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <table border="3">
+                <tr>
+                <th colspan="2">subject</th>
+               
+                <th>john</th>
+                <th>miriam</th>
+               </tr>
+               <tr >
+                <td rowspan="3">biology  </td>
+                <td>theory</td>
+                <td>A</td>
+                <td>A<sup>+</sup></td>
+                 </tr>
+                 <tr>
+                  <td>practical</td>
+                    <td>A</td>
+                    <td>A<sup>+</sup></td>
+                     </tr>
+                <tr>
+                    <td>expeiment</td>
+                    <td>A</td>
+                    <td>A</td>
+                </tr>
+                <tr >
+                    <td rowspan="3">zoology  </td>
+                    <td>theory</td>
+                    <td>A</td>
+                    <td>A<sup>+</sup></td>
+                     </tr>
+                     <tr>
+                      <td>practical</td>
+                        <td>A<sup>+</sup></td>
+                        <td>A</td>
+                         </tr>
+                    <tr>
+                        <td>expeiment</td>
+                        <td>A</td>
+                        <td>A</td>
+                    </tr>
+                    <tr >
+                        <td rowspan="3">cryptoloy  </td>
+                        <td>theory</td>
+                        <td>A<sup>+</sup></td>
+                        <td>A</td>
+                         </tr>
+                         <tr>
+                          <td>practical</td>
+                            <td>A</td>
+                            <td>A<sup>_</sup></td>
+                             </tr>
+                        <tr>
+                            <td>expeiment</td>
+                            <td>A<sup>+</sup></td>
+                            <td>A</td>
+                        </tr>
+            </table>
+           
+        </body>
+    </head>
+</html>
+
+subject	john	miriam
+biology	theory	A	A+
+           practical	A	A+
+            expeiment	A	A
+zoology	theory	A	A+
+            practical	A+	A
+            expeiment	A	A
+cryptoloy	theory	A+	A
+             practical	A	A_
+            expeiment	A+	A
+
+
+=======================================================================================================================
+<!DOCTYPE html>
+<html>
+<head>
+<tittle>welcome to bitlabs</tittle>
+
+</head>
+<body>
+    <table border="2">
+        <th colspan="3">sub</th>
+        <th>john</th>
+        <th>maria</th>
+        <tr>
+             <td rowspan="3">k</td>
+             <tr>
+                <td rowspan="2">c</td>
+                  <td>y</td>
+                   <td>a+</td>
+                    <td>a</td>
+                  <tr>
+                   <td>z</td>
+                   <td>a</td>
+                    <td>a</td>
+                  </tr>
+                 
+                 <tr>
+                  <td rowspan="2"> B</td>
+                  <td>y</td>
+                   <td>a+</td>
+                  <td>a</td>
+                  <tr>
+                  <td>z</td>
+                  <td>a</td>
+                 <td>a</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"> Z</td>
+                    <td>y</td>
+                    <td>a+</td>
+                     <td>a</td>
+                     <tr>
+                     <td>z</td>
+                     <td>a</td>
+                    <td>a</td>
+                   </tr>
+            </tr> 
+         </tr>
+        
+       
+
+    </table>
+</body>
+</html>
+=================================================================================================================================================
+
+import java.util.*;
+class InsufficientFundsException extends Exception{
+  public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+public class Prog{
+  public static void main(String args[]){
+    double bal;
+    double tot_bal;
+    double w_amt;
+    double d_amt;
+    Scanner sc=new Scanner(System.in);
+    try{
+    System.out.println("Enter your account balance");
+    bal=sc.nextDouble();
+    System.out.println("Enter amount to deposit");
+    d_amt=sc.nextDouble();
+    tot_bal=d_amt+bal;
+    bal=tot_bal;
+    System.out.println("account bal after depositing: "+bal);
+    System.out.println("Enter amount to withdraw");
+    w_amt=sc.nextDouble();
+    if(w_amt>bal)
+      throw new InsufficientFundsException("withdraw amount should not be more than your balance");
+    else
+    tot_bal=bal-w_amt;
+    
+    bal=tot_bal;
+    System.out.println("Account balance after withdrawl is "+bal);
+    }
+    catch(InsufficientFundsException e){
+      System.out.println(e.getMessage());
+    }
+    
+}
+}
+============================================================================================================================================================
+<!DOCTYPE html>
+<html>
+<head>
+<tittle>welcome to bitlabs</tittle>
+
+</head>
+<body>
+    <table border="2" cellspacing="20">
+      <tr>
+        <th colspan="3">sub</th>
+        <th>john</th>
+        <th>maria</th>
+      </tr>
+          <tr><td rowspan="9">k</td>
+          <tr>
+            <td rowspan="2">c</td>
+              <td>y</td>
+               <td>a+</td>
+                <td>a</td>
+              <tr>
+               <td>z</td>
+               <td>a</td>
+                <td>a</td>
+              </tr>
+              <tr>
+                <td rowspan="2">c</td>
+                  <td>y</td>
+                   <td>a+</td>
+                    <td>a</td>
+                  <tr>
+                   <td>z</td>
+                   <td>a</td>
+                    <td>a</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">c</td>
+                      <td>y</td>
+                       <td>a+</td>
+                        <td>a</td>
+                      <tr>
+                       <td>z</td>
+                       <td>a</td>
+                        <td>a</td>
+                      </tr>
+                </tr>  
+    </table>
+</body>
+</html>
+=========================================================================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+        <body>
+           
+            <form name="aryanjob">
+                <fieldset>
+                <legend align="center"> job file </legend>
+                firstname:<input type="text" name="txt" size="30" disabled>
+                firstname:<input type="text" name="txt" size="30" required>
+                lastname:<input type="text" name="txt" size="30" required>
+               
+                  
+                        <input type="date" name="name" ><br>
+                        <input type="time" name="name" ><br>
+                        <input type="datetime" name="name" ><br>
+                        <input type="color" name="name" ><br>
+                        <input type="datetime-local" name="name" ><br>
+                        <input type="email" name="name" ><br>
+                        <input type="url" name="name" ><br>
+                        <input type="number" name="name" ><br>
+                        <input type="number" name="name" max="20" min="1"><br>
+                        <input type="range" name="name" max="20" min="1"><br>
+                        <input type="file" name="name" ><br>
+<iframe src="https://www.youtube.com/watch?v=_B6T8O15Ohk" width="50" height="50" frameborder="no"></iframe>
+                        <h5>select your district</h5>
+                    <input list="dist" name="districts">
+                    <datalist id="dist">
+                       < option value="krishna"></option>
+                       < option value="guntur"></option>
+                       < option value="kadapa"></option>
+                    </datalist>
+                <br>
+                password:<input type="password" name="pwd" value="bitlabs">
+                <br>
+                confirmpassword:<input type="password" name="pwd" placeholder="enter password">
+              
+                <h4>SELECT YOUR GENTER PLEASE</h4>
+                <input type="radio" name="m" value ="male">MALE
+                <input type="radio" name="m" value ="female">FEMALE<br>
+                <h4>enter YOUR qualification PLEASE</h4>
+                <input type="checkbox" name="ch" value ="tenth">tenth<br>
+                <input type="checkbox" name="ch" value ="inter">inter<br>
+                <input type="checkbox" name="ch" value ="b.tech">b.tech<br>
+                <input type="checkbox" name="ch" value ="m.tech">m.tech<br>
+                <input type="checkbox" name="ch" value ="phd">phd<br>
+                <br>
+                <select name="s1">
+                    <option value="vijayawada" selected>vijayawada</option>
+                    <option value="guntur">guntur</option>
+                    <option value="kakinada">kakinada</option>
+                </select>
+                <select name="s2" multiple>
+                    <option value="java">java</option>
+                    <option value="phyton">phyton</option>
+                    <option value="php">php</option>
+                </select>
+                <br>
+                <br>
+                <h4>ADDRESS</h4>
+                <br>
+                <textarea name="name" rows="3" cols="5" placeholder="(=o_o=)(=o_o=)(=o_o=)"></textarea>
+                <br>
+                <textarea name="add" >bitlabs</textarea> 
+                <br>
+                <textarea name="name" rows="3" cols="5" placeholder="(=o_o=)(=o_o=)(=o_o=)"></textarea>
+                <br>
+                <input type="text" name="text" required>
+                <br>
+                <h2>push button</h2>
+                <input type="button" name="name" value="push Button">
+                <br>
+                <h2>submit button</h2>
+                <input type="submit" name="name" value="submit">
+                <br>
+                <h2>push button</h2>
+                <input type="reset" name="name" value="reset">
+            </form>
+        </body>
+   
+    </fieldset>
+    
+</html>
+======================================================================================================================================================
+
+css
+==============================================================================================================
+<!DOCTYPE html>
+<html>
+<head>
+    <title>welcome to bitlabs</title>
+<h4 style=color:blue;text-align:justify;font-size:40px;border:5px,solidgreen;padding:15px>aryan</h4>
+<h5 style="color:green;text-align:center;">welcome</h5>
+<h4 style="color:blue;font-size:40px;border:5px,solidgreen;padding:15px;text-shadow:5px 5px 5px gray;">aryan</h4>
+<h4 style="color:blue;font-size:40px;border:5px,solidgreen;padding:15px;border:5px;box-shadow:5px 5px 5px gray;">aryan</h4>
+
+</head>
+<body></body>
+</html>
+==================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+<style type="text/css">
+    body{background-color: rgb(201, 76, 18);font-size: 5;}
+    h2{color:brown;text-align: center;font-size: 50px;}
+    p{color: chartreuse;text-align: justify;font-size: 40px;border: 8px saddlebrown;padding: 10px;box-shadow: 5px 5px 5px cornflowerblue;}
+</style>
+    </head>
+    <body>
+      <h2><tittle>welcome to bitlabs</tittle></h2>  
+        <h2>aryankumar</h4>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+
+    </body>
+</html>
+============================================
+
+body{background-color: rgb(201, 76, 18);font-size: 5;}
+h2{color:brown;text-align: center;font-size: 50px;}
+p{color: chartreuse;text-align: justify;font-size: 40px;border: 8px saddlebrown;padding: 10px;box-shadow: 5px 5px 5px cornflowerblue;}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" type="text/css" href="external.css">
+    </head>
+    <body>
+      <h2><tittle>welcome to bitlabs</tittle></h2>  
+        <h2>aryankumar</h4>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p>India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+
+    </body>
+</html>
+=============================================================
+
+
+
+<!DOCTYPE html>
+       <head>
+              <title>Welcome to My Webite</title>
+     <style type="text/css">
+    #b1
+    {
+        background-color:skyblue;
+    }
+   #head1
+    {
+        color:red;
+        text-align:center;
+        font-size:60px;
+     }  
+    #head2
+    {
+        color:orange;
+        text-align:center;
+        font-size:50px;
+     } 
+    #para1,#para2,#para3
+    {
+        color:maroon;
+        text-align:justify;
+        font-size:40px;
+     } 
+    </style>
+      </head>
+      <body id="b1">
+               <h1 id="head1">WELCOME TO CSS</h1>
+                <h2 id="head2">Spring</h2>
+<p id="para1">
+Spring Framework is an open-source Java-based framework that provides a comprehensive infrastructure for developing Java applications. It was created by Rod Johnson in 2003 and is currently maintained by Pivotal Software, which is a subsidiary of VMware.The Spring Framework is designed to simplify the development of enterprise-level applications by providing a modular approach to building complex software. It includes various modules that can be used independently or in combination to build applications, such as Spring Core, Spring MVC, Spring Data, Spring Security, and many more.
+</p>
+<p id="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+<p id="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+     </body>
+</html>
+================================================================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle  text-align:center><h3>welcome to bitlabs</h3></tittle>
+        <style type="text/css">
+            #b1
+            {
+                 background-color: aquamarine;
+            }
+            #head1
+            {
+                color :orange;
+                text-align: center;
+                font-size: 50px;
+
+            }
+            #head2
+            {
+                color :rgb(163, 113, 22);
+                text-align: center;
+                font-size: 50px;
+
+            }
+            #para1,#para2#para3
+{
+    color: burlywood;
+    text-align: justify;
+    font-size: 30px;
+}
+        </style>
+    </head>
+    <body id="b1">welcome to bitlabs
+        <p id="head1">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p id="b1"> India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p id="para3">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p id="head1">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+<h4 id="head2">my name is pavankalyan</h4>
+    </body>
+</html>
+=====================================================================================================
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle  text-align:center><h3>welcome to bitlabs</h3></tittle>
+        <style type="text/css">
+            .b1
+            {
+                 background-color: aquamarine;
+            }
+            .head1
+            {
+                color :orange;
+                text-align: center;
+                font-size: 50px;
+
+            }
+          h4.head2
+            {
+                color :rgb(163, 113, 22);
+                text-align: center;
+                font-size: 50px;
+
+            }
+            .para1,.para2,.para3
+{
+    color: burlywood;
+    text-align: justify;
+    font-size: 30px;
+}
+        </style>
+    </head>
+    <body class="head2">welcome to bitlabs
+        <p class="head1">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p class="b1"> India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p class="para3">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+        <p class="head1">India, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a country in South Asia. It is the seventh-largest country by area, in 2023 it set to be the most populous country in the world, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,</p>
+<h4 class="head2">my name is pavankalyan</h4>
+    </body>
+</html>
+============================================================================================================
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        welcome to bitlabs
+    </head>
+    <body >
+        <table background="mash.jpg" border="5" align="center"  width="300" heigth="250" cellpadding="50" cellspacing="10">
+            <caption>companyinformation</caption>
+                <tr>
+                    <th >company</th>
+                    <th>name</th>
+                    <th>phoneno</th>
+                </tr>
+                <tr>
+                    <td>symphonise</td>
+                    <td>pavan</td>
+                    <td>65988</td>
+                </tr>
+                <tr>
+                    <td>bitlabs</td>
+                    <td>kumar</td>
+                    <td>69088</td>
+                </tr>
+                <tr>
+                    <td>tekworks</td>
+                    <td>aryan</td>
+                    <td>68494</td>
+                </tr>
+                
+            
+        </table>
+    </body>
+</html>
+====================================================================================================================
+[2:33 PM] Karunakar Eeede
+    <!DOCTYPE html>
+       <head>
+              <title>Welcome to My Webite</title>
+     <style type="text/css">
+    #b1
+    {​​
+        background-color:skyblue;
+    }​​
+   #head1
+    {​​
+        color:red;
+        text-align:center;
+        font-size:60px;
+     }​​  
+    #head2
+    {​​
+        color:orange;
+        text-align:center;
+        font-size:50px;
+     }​​ 
+    #para1,#para2,#para3
+    {​​
+        color:maroon;
+        text-align:justify;
+        font-size:40px;
+     }​​ 
+    </style>
+      </head>
+      <body id="b1">
+               <h1 id="head1">WELCOME TO CSS</h1>
+                <h2 id="head2">Spring</h2>
+<p id="para1">
+Spring Framework is an open-source Java-based framework that provides a comprehensive infrastructure for developing Java applications. It was created by Rod Johnson in 2003 and is currently maintained by Pivotal Software, which is a subsidiary of VMware.The Spring Framework is designed to simplify the development of enterprise-level applications by providing a modular approach to building complex software. It includes various modules that can be used independently or in combination to build applications, such as Spring Core, Spring MVC, Spring Data, Spring Security, and many more.
+</p>
+<p id="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+<p id="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+     </body>
+</html>
+​
+​=================================
+​[3:16 PM] Karunakar Eeede
+    1.CSS TEXT FORMATTING:
+------------------------------------
+      1.1 Text Color:
+      ------------------
+         color:blue
+         color:#00ff00
+         color:rgb(255,0,0)
+         1.2 Text Alignment
+         ------------------------
+        text-align:left
+         text-align:center
+         text-align:right
+         text-align:justify
+         1.3 Text Decoration:
+         ------------------
+         text-decoration:none;
+         text-decoration:overline;
+         text-decoration:line-through;
+         text-decoration:underline;
+         1.4 Text Transformation:
+         -----------------------
+         text-transform:uppercase;
+         text-transform:lowercase;
+         text-transform:capitalize;
+         1.5Text Indentation
+           -------------------
+         text-indent:50px;
+​[3:16 PM] 
+      
+      Ravi (Guest) was invited to the meeting.
+      
+    ​[3:39 PM] Karunakar Eeede
+    2.CSS Font
+----------
+         2.1 CSS Font Families:
+         ---------------------
+          font-family:"Times New Roman", Times, serif;
+         2.2 Font Style:
+         --------------
+         font-style:normal;
+         font-style:italic;
+         font-style:oblique;
+
+         2.3 Set Font Size With Pixels,points,%
+         ----------------------------------------------
+       font-size:40px;
+       font-size:10pt;
+       font-size:110%;
+         2.4 Set Font Size With Em
+         ---------------------------------
+         font-size:2.5em; /* 40px/16=2.5em */
+         font-size:1.875em; /* 30px/16=1.875em */
+         font-size:0.875em; /* 14px/16=0.875em */
+         2.5 Font Varient:
+         --------------------
+       font-variant:small-caps;
+       font-variant:normal
+         2.6 Font Weight:
+         ---------------
+         font-weight:normal
+      font-weight:bold 
+      font-weight:bolder
+      font-weight:lighter
+      font-weight:900
+​[3:51 PM] Karunakar Eeede
+    <!DOCTYPE html>
+       <head>
+              <title>Welcome to My Webite</title>
+     <style type="text/css">
+   h1.head1
+    {​​
+        color:red;
+        text-align:center;
+            font-family:Tw Cen MT;
+         font-style:oblique;
+       font-size:2.5em; 
+      font-weight:lighter;
+     }​​  
+    h2.head2
+    {​​
+        color:#0000FF;      
+        text-align:right;
+        font-family:Viner Hand ITC;
+     }​​ 
+    p.para1,p.para2,p.para3
+    {​​
+        color:rgb(125,23,132);
+        text-align:justify;
+      font-style:italic;
+      font-size:2.5em; 
+      font-variant:small-caps;
+      font-weight:bolder;
+     }​​ 
+     a
+     {​​
+          color:red;
+          text-decoration:none;
+      }​​
+    </style>
+      </head>
+      <body class="b1">
+       <a href="https:www.google.com" target="_new">GOOGLE WEBSITE</a>
+               <h1 class="head1">WELCOME TO CSS</h1>
+                <h2 class="head2">Spring</h2>
+<p class="para1">
+Spring Framework is an open-source Java-based framework that provides a comprehensive infrastructure for developing Java applications. It was created by Rod Johnson in 2003 and is currently maintained by Pivotal Software, which is a subsidiary of VMware.The Spring Framework is designed to simplify the development of enterprise-level applications by providing a modular approach to building complex software. It includes various modules that can be used independently or in combination to build applications, such as Spring Core, Spring MVC, Spring Data, Spring Security, and many more.
+</p>
+<p class="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+<p class="para2">
+The Spring Framework promotes the use of dependency injection and inversion of control (IoC) to manage the components of an application. It also provides support for aspect-oriented programming (AOP), which enables the separation of cross-cutting concerns such as logging, security, and caching from the business logic.Some of the benefits of using Spring Framework include faster development time, easier maintenance, better scalability, and improved testability. It is widely used in the industry and has a large and active community of developers.      </p>
+     </body>
+</html>
+
+=============================================================================================================================================
+
+5.CSS Lists
+
+------------
+
+ 
+
+    5.1 Different List Item Markers
+
+    --------------------------------
+
+      list-style-type: none;
+
+      list-style-type: disc;
+
+      list-style-type: circle;
+
+         list-style-type: square;
+
+ 
+
+         list-style-type: upper-roman;
+
+         list-style-type: lower-alpha; 
+
+ 
+
+armenian : The marker is traditional Armenian numbering
+
+ 
+
+decimal:      The marker is a number (1,2,3,4….)
+
+ 
+
+decimal-leading-zero: The marker is a number padded by initial zeros                                                   (01, 02, 03, etc.)
+
+ 
+
+georgian: The marker is traditional Georgian numbering (an, ban, gan,                                                                etc.)
+
+ 
+
+lower-alpha: The marker is lower-alpha (a, b, c, d, e, etc.)
+
+ 
+
+lower-greek: The marker is lower-greek (alpha, beta, gamma, etc.)
+
+ 
+
+lower-latin: The marker is lower-latin (a, b, c, d, e, etc.)
+
+ 
+
+lower-roman:        The marker is lower-roman (i, ii, iii, iv, v, etc.)
+
+ 
+
+upper-alpha: The marker is upper-alpha (A, B, C, D, E, etc.)
+
+ 
+
+upper-latin: The marker is upper-latin (A, B, C, D, E, etc.)
+
+ 
+
+upper-roman:        The marker is upper-roman (I, II, III, IV, V, etc.)
+
+    
+
+     5.2 CSS list-style-image Property
+
+     ----------------------------------
+
+    
+
+         list-style-image:url("/images/blueball.gif");
+==========================================================================================
+6.CSS BORDER Properties :
+
+-----------------------
+
+         6.1 Border Style:
+
+      ----------------         
+
+            border-style:none
+
+            border-style:dotted
+
+           border-style:dashed
+
+            border-style:solid
+
+            border-style:double
+
+            border-style:groove
+
+            border-style:ridge 
+
+        
+
+            border-left-style:
+
+            border-right-style:
+
+            border-top-style:
+
+            border-bottom-style:
+
+ 
+
+            border-style:dotted solid double dashed;
+
+                      top border is dotted
+
+                       right border is solid
+
+                       bottom border is double
+
+                      left border is dashed 
+
+    
+
+ 
+
+     6.2 Border Width:
+
+     -----------------
+
+ 
+
+            border-width:5px;
+
+            border-width:medium;
+
+            border-width:thick;
+
+            border-width:thin; 
+
+            border-width:length;
+
+ 
+
+            border-left-width:
+
+            border-right-width:
+
+            border-top-width:
+
+            border-bottom-width:
+
+ 
+
+     6.3 Border Color:
+
+     -----------------
+
+ 
+
+            border-color:red;
+
+              border-color:#98bf21;  
+
+            border-color:rgb(255,0,0);
+
+              
+
+            border-left-color:
+
+            border-right-color:
+
+            border-top-color:
+
+            border-bottom-color:       
+
+      
+
+      6.4 Border - Shorthand property
+
+       -------------------------------
+
+ 
+
+            border:5px solid red;
+
+ 
+
+      6.5 Border - Radius Property     
+
+      ------------------------------------ 
+
+            border-radius:25px;
+
+            
+
+            box-shadow:5px 5px 5px #000000;
+============================================================================================================
+
+7.CSS Margin
+
+------------
+
+      
+
+      7.1 Margin - Individual sides
+
+      ----------------------------- 
+
+        margin-top:100px;
+
+         margin-bottom:100px;
+
+         margin-right:50px;
+
+         margin-left:50px;
+
+ 
+
+      7.2 Margin - Shorthand property
+
+      -------------------------------
+
+ 
+
+       margin:25px 50px 75px 100px;
+
+                  top margin is 25px
+
+                  right margin is 50px
+
+                  bottom margin is 75px
+
+                  left margin is 100px 
+
+ 
+============================================================================================================================================================================================================================================================================================
+        
+
+8.CSS Padding
+
+-------------
+
+ 
+
+      8.1 Padding - Individual sides
+
+      ------------------------------
+
+ 
+
+        padding-top:25px;
+
+           padding-bottom:25px;
+
+           padding-right:50px;
+
+           padding-left:50px;
+
+ 
+
+      8.2 Padding - Shorthand property
+
+      --------------------------------
+
+  
+
+        padding:25px 50px 75px 100px;
+
+                  top padding is 25px
+
+                  right padding is 50px
+
+                  bottom padding is 75px
+
+                  left padding is 100px
+============================================================================================================================================
+
+
+<!DOCTYPE html>
+<head>
+<title>Welcome to My Webite</title>
+<style type="text/css">
+    .apdiv1
+    {
+        width:300px;
+        height:360px;
+        border:1px solid orange;
+        font-size:18px;
+        text-align:justify; 
+        color:white;
+       background-color:green;
+      margin-left:100px;
+      margin-top:100px;
+      padding:10px;
+      box-shadow:-5px -5px 5px gray,5px 5px 5px gray;
+      text-shadow:5px 5px 5px black;
+     border-radius:20px;
+       position:absolute;
+     } 
+   .apdiv2
+    {
+        width:300px;
+        height:360px;
+        border:1px solid orange;
+        font-size:18px;
+        text-align:justify; 
+        color:white;
+       background-color:green;
+      margin-left:500px;
+      margin-top:200px;
+      padding:10px;
+      box-shadow:-5px -5px 5px gray,5px 5px 5px gray;
+      text-shadow:5px 5px 5px black;
+     border-radius:20px;
+     position:absolute;
+     } 
+</style>
+</head>
+<body>
+
+<div class="apdiv1">
+Spring Framework is an open-source Java-based framework that provides a comprehensive infrastructure for developing Java applications. It was created by Rod Johnson in 2003 and is currently maintained by Pivotal Software, which is a subsidiary of VMware.The Spring Framework is designed to simplify the development of enterprise-level applications by providing a modular approach to building complex software. It includes various modules that can be used independently or in combination to build applications, such as Spring Core, Spring MVC, Spring Data, Spring Security, and many more.
+</div>
+<div class="apdiv2">
+Spring Framework is an open-source Java-based framework that provides a comprehensive infrastructure for developing Java applications. It was created by Rod Johnson in 2003 and is currently maintained by Pivotal Software, which is a subsidiary of VMware.The Spring Framework is designed to simplify the development of enterprise-level applications by providing a modular approach to building complex software. It includes various modules that can be used independently or in combination to build applications, such as Spring Core, Spring MVC, Spring Data, Spring Security, and many more.
+</div>
+
+ 
+
+     </body>
+</html>
+
+ 
+
+============================================================================================================================================================================================================================================================================================
+import java.io.*;
+
+public class  ConvertIntoSwapCase{
+    public static void main(String[] args) {
+        try {
+            // Open the input and output files
+            FileInputStream inputFile = new FileInputStream("input.txt");
+            FileOutputStream outputFile = new FileOutputStream("output.txt");
+
+            // Read from the input file and write to the output file
+            int data;
+            while ((data = inputFile.read()) != -1) {
+                // Convert the character to swap case
+                char character = (char) data;
+                if (Character.isUpperCase(character)) {
+                    character = Character.toLowerCase(character);
+                } else if (Character.isLowerCase(character)) {
+                    character = Character.toUpperCase(character);
+                }
+
+                // Write the character to the output file
+                outputFile.write((int) character);
+            }
+
+            // Close the input and output files
+            inputFile.close();
+            outputFile.close();
+
+            System.out.println("File contents swapped successfully.");
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+======================================================================================================================================================================================================================
+
+
+import java.io.*;
+
+public class ConvertToUpperCase {
+    public static void main(String[] args) {
+        try {
+            // Open input and output streams
+            FileInputStream inputStream = new FileInputStream("input.txt");
+            FileOutputStream outputStream = new FileOutputStream("output.txt");
+
+            // Read input file character by character and convert to uppercase
+            int c;
+            while ((c = inputStream.read()) != -1) {
+                char character = (char) c;
+                char upperCaseCharacter = Character.toUpperCase(character);
+                outputStream.write(upperCaseCharacter);
+            }
+
+            // Close input and output streams
+            inputStream.close();
+            outputStream.close();
+
+            System.out.println("File converted to uppercase successfully.");
+
+        } catch (IOException e) {
+            System.out.println("Error while reading or writing file: " + e.getMessage());
+        }
+    }
+}
+===================================================================================================================================================================================================================
+[11:26] Karunakar Eeede
+
+
+
+
+Let's write a code to create Spring container:
+
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+Note that we are supplying configuration metadata via applicationContext.xml file(XML-based configuration).
+
+AnnotationConfigApplicationContext  context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+Note that we are supplying configuration metadata via AppConfig.class file.
+
+The most used API that implements the BeanFactory is the XmlBeanFactory.
+
+XmlBeanFactory factory = new XmlBeanFactory (new ClassPathResource("applicationContext.xml"));
+
+Next, how to Retrieve bean from spring container?
+
+How to Retrieve Bean from Spring Container?
+
+Both BeanFactory and ApplicationContext interface provides getBean() method to retrieve bean from spring container.
+
+ApplicationContext getBean() Example:
+
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+
+HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+
+BeanFactory getBean() Example:
+
+XmlBeanFactory factory = new XmlBeanFactory (new ClassPathResource("beans.xml")); 
+
+HelloWorld obj = (HelloWorld) factory.getBean("helloWorld");
+
+
+
+================================================================================================================================================
+
+
+
+[11:45] Karunakar Eeede
+
+
+
+
+<dependency>
+
+    <groupId>org.springframework</groupId>
+
+    <artifactId>spring-context</artifactId>
+
+    <version>6.0.7</version>
+
+</dependency>
+
+
+
+[12:04 PM] Karunakar Eeede
+    public class HelloWorld {​​
+    private String message;
+    public void setMessage(String message) {​​
+        this.message = message;
+    }​​
+    public void getMessage() {​​
+        System.out.println("My Message : " + message);
+    }​​
+}​​
+​[12:12 PM] Karunakar Eeede
+    Clear Teams cache in Windows
+If Teams is still running, right-click the Teams icon in the taskbar, and then select Quit.Open the Run dialog box by pressing the Windows logo key  +R.In the Run dialog box, enter %appdata%\Microsoft\Teams, and then select OK.Delete all files and folders in the %appdata%\Microsoft\Teams directory.Restart Teams.
+
+=========================================================================================================================================================================================
+​[12:15 PM] Karunakar Eeede
+    <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+<bean id="helloWorld" class="com.SpringDemo.HellowWorld.HelloWorld">
+  <property name="message" value="Hello World!" />
+</bean>
+</beans>
+​[12:22 PM] Karunakar Eeede
+    import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class Application {​​
+    public static void main(String[] args) {​​
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        obj.getMessage();
+    }​​
+}​​
+
+
+
+
+
+https://mvnrepository.com/artifact/org.springframework/spring-context/6.0.7
+
+Maven Repository: org.springframework » spring-context » 6.0.7
+
+
+
+================================================================================================================================================
+import java.util.Scanner;
+ 
+public class Main{
+    public static void main(String[] args) {
+        boolean Primenum = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int number = sc.nextInt();
+        if (number <= 1) {
+            Primenum = false;
+        } else {
+            for (int i = 2; i <= number / 2; i++) {
+                if (number % i == 0) {
+                    Primenum = false;
+                    break;
+                }
+            }
+        }
+ 
+        if (Primenum) {
+            System.out.println(number + " is a prime number");
+        } else {
+            System.out.println(number + " is not a prime number");
+        }
+    }
+}
+===============================================================================================================================================================================================================================
+[4:24 PM] Mallela Vinay Kumar  (Guest)
+    
+
+import java.util.PriorityQueue;publicclassPriorityQueueExample{​​​​​​​​publicstaticvoid main(String[] args){​​​​​​​​PriorityQueue<String> queue =newPriorityQueue<String>(15,newMyComparator());
+        queue.add("Tyrion Lannister");
+        queue.add("Daenerys Targaryen");
+        queue.add("Arya Stark");
+        queue.add("Petyr 'Littlefinger' Baelish");/*
+         * What I am doing here is removing the highest
+         * priority element from Queue and displaying it.
+         * The priority I have set is based on the string
+         * length. The logic for it is written in Comparator
+         */while(queue.size()!=0){​​​​​​​​System.out.println(queue.poll());}​​​​​​​​}​​​​​​​​}​​​​​​​​
+
+
+
+​[4:25 PM] Mallela Vinay Kumar  (Guest)
+    
+
+import java.util.Comparator;
+publicclassMyComparatorimplementsComparator<String>{​​​​​​​​
+@Overridepublicint compare(String x,String y){​​​​​​​​
+return x.length()- y.length();
+}
+​​​​​​​​}​​​​​​​​
+
+
+=========================================================================================================================
+
+
+/**************************
+
+                        
+                        
+
+write a java program to validate username and password
+username should have only alphabets and length should be in  between 8 to 12
+password sholud have numericals,alphabets, special characters first letter should must capital
+
+***************************/
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter your username");
+        String username=sc.next();
+        System.out.println("enter your password");
+        String password=sc.next();
+         if (username.matches("^[a-zA-Z]+$") && username.length()>=8 && username.length()<=12){
+             System.out.println("username is taken by compliler");
+         }
+         else{
+             System.out.println("username must have only alphabets and length must between in 8 to 12");
+         }
+         int alphacount=0,spcharcount=0,numcount=0;
+         if(password.charAt(0)>='A' && password.charAt(0)<='Z'){
+         for(int i=1;i<password.length();i++){
+             char ch=password.charAt(i);
+            if(ch>='a' && ch<='z' ){
+                alphacount++;
+            }
+            else if(ch>='0' && ch<='9'){
+                spcharcount++;
+            }
+            else{
+                numcount++;
+            }
+         }
+         if(alphacount>=1 && spcharcount>=1 && numcount>=1){
+            System.out.println("password is taken by compliler"); 
+         }
+         else{
+             System.out.println("your password must have one character, one number, one special character");
+         }
+         }
+         else{
+             System.out.println("your password must have first character capital");
+         }
+    }
+    
+}
+=========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
