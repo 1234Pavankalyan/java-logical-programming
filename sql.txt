@@ -1,0 +1,358 @@
+create database mobiles
+
+Creating a Database:
+-------------------------
+    create database database_name;
+ex:
+     create database Student;
+ Changing the  Database:
+------------------------------
+     use database_name;
+ex:
+    use student; 
+Create Table:
+---------------
+Syntax:
+   create table table_name
+   (
+         var_name datatype(size), 
+         var_name datatype(size), 
+         __________
+         __________
+   ); Ex:
+   create table stud
+     (
+          sno int(10),
+          sname varchar(20),
+           sphno int(15),
+          semail varchar(30),
+          sdob date
+      ); 
+
+===========================================================================================================================================================
+       Inserting Values into database:
+------------------------------------- insert into table_name values(value 1,value2.......................);
+ ex: insert into stud values(101,'Karun',786765,'karun@gmail.com','1999-05-21');
+      insert into stud(saddress) VALUES ('bezawada');
+===========================================================================================================================================================
+update stud set sphno=63083839 where sno=101;
+alter table stud add saddress varchar(16);
+update stud set saddress='vijayawada' where sno=101;
+update stud set saddress='guntur' where sname='pavan';
+ ===========================================================================================================================================================
+delete from stud where sno=103;
+truncate table stud;
+drop TABLE stud;
+select distinct sname from stud;
+
+SELECT * FROM stud WHERE saddress = 'karimnagar' ORDER BY sname;
+SELECT * FROM stud WHERE saddress = 'karimnagar' ORDER BY sname ASC; 
+ SELECT *  FROM stud  WHERE saddress = 'karimnagar'  ORDER BY sname DESC;
+ SELECT stud,address  FROM officers  WHERE sno > 100  ORDER BY sname DESC, address ASC;
+
+===========================================================================================================================================================
+SELECT sname ,COUNT(*) FROM stud GROUP BY sname;
+out put 
+sname   COUNT(*)
+Karun     3
+===========================================================================================================================================================
+SELECT sname,SUM(sno) AS "TOTAL WORKING HOURS" FROM stud GROUP BY sname;
+sname    TOTAL WORKING HOURS
+Karun      304
+===========================================================================================================================================================
+ SELECT sname,MIN(sno) AS "MINIMUM WORKING HOURS" FROM stud GROUP BY sname;
+sname  MINIMUM WORKING HOURS
+Karun      17
+===========================================================================================================================================================
+SELECT sname,MAX(sno) AS "MAXIMUM WORKING HOURS" FROM stud GROUP BY sname;
+sname  MAXIMUM WORKING HOURS
+Karun     178
+===========================================================================================================================================================
+SELECT sname,AVG(sno) AS "average WORKING HOURS" FROM stud GROUP BY sname;
+sname   average WORKING HOURS
+Karun     112.333
+===========================================================================================================================================================
+SELECT sname,SUM(sno) AS "TOTAL WORKING HOURS" FROM stud GROUP BY sname HAVING SUM(sno)>100;
+sname   TOTAL WORKING HOURS
+arjun     104
+aryan     105
+Karun    674
+kavya    106
+mithra    107
+===========================================================================================================================================================
+ALTER TABLE table_name  MODIFY column_name datatype;
+===========================================================================================================================================================
+//primary key
+
+CREATE TABLE Students12(
+ Student_ID INT,
+Roll_No INT,
+ NAME VARCHAR(45) NOT NULL,
+Age INT,
+City VARCHAR(25),
+PRIMARY KEY(Student_ID, Roll_No)
+);
+
+CREATE TABLE Login(
+login_id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(40),
+PASSWORD VARCHAR(55),
+email VARCHAR(55)
+);
+
+
+insert into students12 values(101,12,'arjun',12,'kavya');
+insert into students12 values(101,12,'arjun',12,'kavya');
+error duplicate values not taken by primary key
+===========================================================================================================================================================
+
+
+
+Consider the following tables to write the SQL queries for below questions. Table: Salespeople
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1003 | AxelRod | New York  | 0.10 |
+| 1004 | Motika  | London    | 0.11 |
+| 1005 | Fran    | London    | 0.26 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
++------+---------+-----------+------+ 
+Table: Customer
+ +------+----------+----------+--------+------+
+| cnum | cname    | city     | rating | snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+ 
+Table: Orders
+ +------+---------+------------+------+
+| onum | amt     | odate      | cnum |
++------+---------+------------+------+
+| 3001 |   18.69 | 1996-03-10 | 2008 |
+| 3002 | 1900.10 | 2022-04-13 | 2007 |
+| 3003 |  767.19 | 2022-04-13 | 2001 |
+| 3005 | 5160.45 | 2022-05-23 | 2003 |
+| 3006 | 1098.16 | 2022-05-12 | 2008 |
+| 3007 |   75.75 | 2022-06-11 | 2002 |
+| 3008 | 4723.00 | 2022-02-13 | 2006 |
+| 3009 | 1713.23 | 2022-01-13 | 2002 |
+| 3010 | 1309.95 | 2022-03-13 | 2004 |
+| 3011 | 9891.88 | 2022-02-13 | 2006 |
++------+---------+------------+------+  
+Questions: 1. Find the largest order taken by each salesperson on each date.
+2. Arrange the Orders table by descending customer number.
+3. Find which salespeople currently have orders in the Orders table.
+4. Count the orders of each of the salespeople and output the results in descending order.
+5. Find customers in San Jose who have a rating above 200.
+6. Give the salespeople’s commissions as percentages instead of decimal numbers.
+7. List the largest orders for October 3, for each salesperson.
+8. Count the number of salespeople currently listing orders in the Orders table.
+9. Find salespeople who have multiple customers.
+10. Find salespeople with customers located in their city.
+11. Find all salespeople whose name starts with ‘P’ and the fourth character is ‘l’.
+12. Select all orders that are greater than the average for October 4.
+13. Write a query that totals the orders for each day and places the results in descending order.
+14. Write a query that calculates the amount of the salesperson’s commission on each order by a customer with a rating above 100.00.
+15. Find only those customers whose ratings are higher than every customer in Rome.
+16. Which salesperson(s) should be fired?
+17. What is the total income for the company?
+18. Write a query that selects the first customer in alphabetical order whose name begins with G.
+19. Which salespeople have no orders between 10/03/1996 and 10/05/1996?
+20. Who is the most successful salesperson?
+21. Who is the worst customer with respect to the company?
+22. Find all orders by customers not located in the same cities as their salespeople.
+23. Find all salespeople who have customers with more than one current order.
+24. Which salesperson has earned the most by way of commission?
+25. Write a query that selects each customer’s smallest order 
+
+
+https://onecompiler.com/mysql  
+https://www.w3schools.com/mysql/mysql_datatypes.asp#:~:text=In%20MySQL%20there%20are%20three,numeric%2C%20and%20date%20and%20time.  
+
+===========================================================================================================================================================
+
+[CONSTRAINT constraint_name]
+FOREIGN KEY [foreign_key_name]
+ (column_name, ...)
+REFERENCES parent_table(colunm_name,...)
+[ON DELETE reference_option]
+[ON UPDATE reference_option]
+
+
+
+[11:36 AM] Karunakar Eeede
+CREATE TABLE categories( 
+ categoryId INT AUTO_INCREMENT PRIMARY KEY,  
+ categoryName VARCHAR(100) NOT NULL
+);
+CREATE TABLE products(  
+ productId INT AUTO_INCREMENT PRIMARY KEY,  
+ productName varchar(100) not null,  
+ categoryId INT,  
+ CONSTRAINT fk_category   
+FOREIGN KEY (categoryId)        
+REFERENCES categories(categoryId) 
+);
+insert into categories(categoryname) VALUES ('smartphone'),('smartwatch');
+INSERT INTO products(productName, categoryId)VALUES('iPhone',1);
+INSERT INTO products(productName, categoryId)VALUES('rolex',2);
+
+
+
+CREATE TABLE employees (
+  id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  department VARCHAR(50),
+  location VARCHAR(50)
+); 
+INSERT INTO employees (id, first_name, last_name, department, location)
+VALUES (1, 'Harshad', 'Kuwar', 'Marketing', 'Pune'),
+       (2, 'Anurag', 'Rajput', 'IT', 'Mumbai'),
+       (3, 'Chaitali', 'Tarle', 'IT', 'Chennai'),
+       (4, 'Pranjal', 'Patil', 'IT', 'Chennai'),
+       (5, 'Suraj', 'Tripathi', 'Marketing', 'Pune'),
+       (6, 'Roshni', 'Jadhav', 'Finance', 'Bangalore'),
+       (7, 'Sandhya', 'Jain', 'Finance', 'Bangalore');
+
+SELECT *FROM employees WHERE Department = "IT" OR Location = "Chennai";
+SELECT *FROM employees WHERE Department = "IT" AND Location = "Chennai";
+SELECT Student_RollNo AS 'Roll No', Student_PhoneNumber AS 'Mobile Number' FROM students;  
+
+
+create table employor(
+id int AUTO_INCREMENT PRIMARY KEY,
+firstname varchar(50),
+lastname varchar(50),
+department varchar(50),
+location varchar(50));
+INSERT INTO employor(firstname,lastname,department,location)
+VALUES('aryan','kumar','it','delhi'),
+       ('arjun','shetty','it','kolkata'),
+       ('shilpa','kumari','marketing','pune'),
+        ('priya','kumari','marketing','pune'),
+       ('pavan','kalyan','animator','vijayawada'),
+        ('pavani','kalyani','animator','vijayawada'),
+       ('showla','howla','it','delhi');
+select location AS stay from employor;
+SELECT * FROM `employor` WHERE department='animator' and location='vijayawada';
+SELECT * FROM `employor` WHERE department='it' or location='pune';
+
+========================================================================================================================================================
+CREATE TABLE customers 
+( 
+id INT NOT NULL AUTO_INCREMENT, 
+name VARCHAR(50) NOT NULL, 
+email VARCHAR(100) NOT NULL,
+ PRIMARY KEY (id)); 
+INSERT INTO customers (name, email)
+ VALUES('John', 'john@example.com'),
+('Jane', 'jane@example.com'),
+('Bob', 'bob@example.com'); 
+CREATE TABLE orders 
+( 
+id INT NOT NULL AUTO_INCREMENT,
+ customer_id INT NOT NULL, 
+order_date DATE NOT NULL,
+ PRIMARY KEY (id),
+ FOREIGN KEY (customer_id)
+ REFERENCES customers(id));
+ INSERT INTO orders (customer_id, order_date) 
+VALUES(1, '2022-01-01'),
+(1, '2022-02-05'),
+(2, '2022-03-10'),
+(3, '2022-03-15');
+
+SELECT customers.name, orders.order_date
+FROM customers
+INNER JOIN orders
+ON customers.id = orders.customer_id;
+
+
+SELECT customers.name, orders.order_date
+FROM customers
+LEFT JOIN orders
+ON customers.id = orders.customer_id;
+
+SELECT customers.name, orders.order_date
+FROM customers
+RIGHT JOIN orders
+ON customers.id = orders.customer_id;
+
+SELECT customers.name, orders.order_date
+FROM customers
+INNER JOIN orders
+ON customers.id = orders.customer_id;
+========================================================================================================================================================
+[11:35 AM] Karunakar Eeede
+Java Database Connectivity Steps:   
+  import java.sql.*;
+----------------------------------------- 
+1) Loading the Database driver:
+---------------------------------------   
+                 Class Name:  com.mysql.cj.jdbc.Driver        
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+2) Establish the connection:
+----------------------------------  
+                  Connection con=DriverManager.getConnection(“url”,”username”,”password”);
+       ex:      Connection con=DriverManager.getConnection(“jdbc:mysql://localhost:3306/karun”,”root”,””);
+                                                                                         |
+                                                                                    Database name
+ 3) create statement object:
+--------------------------------   
+       Statement  stmt=con.createStatment();
+                        or
+         PreparedStatement psmt=con.prepareStatement("Sql Query");
+ 4) Execute the Statement:
+------------------------------
+  Create,Insert,Update,Dalete  ...........etc    
+ psmt.executeUpdate();
+           Select: stmt.executeQuery("Select Query"); 
+5) Close the Connection:
+------------------------------            
+   con.close(); 
+=========================================================================================================================================================    
+
+[2:58 PM] Karunakar Eeede
+import java.sql.*;
+public class App
+{ 
+    public static void main(String[] args) 
+    {
+        try 
+        {
+         //1. loading Driver class
+         Class.forName("com.mysql.cj.jdbc.Driver");         
+       // 2. Establish the connection
+         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","");
+         if(con!=null) {
+             System.out.println("Connected Successfully");
+         }
+         else {
+            System.out.println("Connection fail"); 
+         }
+         // close connection
+         con.close();
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+}
+=============================================================================================================================================
+
+create table emp
+(
+    eno int,
+    ename varchar(20),
+    esal int
+);
+
