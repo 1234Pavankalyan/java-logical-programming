@@ -2061,8 +2061,7 @@ class Alphabet1 {
 
 class Alphabet2 {
   public static void main(String args[])
-  {
-    
+  {    
     char ch='a';
     while(ch<='z')
       {
@@ -2325,7 +2324,7 @@ System.out.println("Enter number");
 int n=sc.nextInt();
 int rem,prod=1;
 int last_digit=n%10;
-while(n>=9)
+while(n>9)
 {
 n=n/10;
 }
@@ -2496,7 +2495,8 @@ public class StrongAll{
        int sum=0;
        int fact=1;
       while(num1!=0)
-      {   fact=1;
+      {   
+             fact=1;
           int rem=num1%10;
           num1=num1/10;
           for(int j=1;j<=rem;j++)
@@ -3782,6 +3782,7 @@ class Home9{
 Here, name and age have to be stored for both students and teachers and we also know that both students and teachers are persons.
 Therefore, we can make Person as a class with name and age as attributes, and can make Student and Teacher as the subclasses of Person. In the Student class, we can define an additional marks attribute and in the Teacher class an additional salary attribute.
 Now let’s implement this in Java using super wherever necessary.*/
+
 class Person{
   String name;
   int age;
